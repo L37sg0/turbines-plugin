@@ -3,7 +3,7 @@
 * @package Turbines
 */
 /*
-Plugin Name: Turbines
+Plugin Name: Турбини
 Plugin URI: http://github.com/l37sg0/turbines-plugin
 Description: Machine planing wordpress plugin fo windparks
 Version: 1.0.0
@@ -17,7 +17,12 @@ defined( 'ABSPATH' ) or die( 'Permission Denied !' );
 class TurbinePlugin
 {
     function __construct(){
-        add_action( 'init', array( $this, 'custom_post_type' ) );
+        $this->create_post_type();
+        //$this->print_stuff();
+    }
+
+    private function print_stuff(){
+        echo 'test';
     }
 
     function register() {
@@ -34,6 +39,7 @@ class TurbinePlugin
     function deactivate(){
         // flush rewrite rules
     }
+
     function uninstall(){
         // delete CPT
         // delete all the plugin data
@@ -41,6 +47,10 @@ class TurbinePlugin
 
     function custom_post_type(){
         register_post_type( 'turbine', ['public' => true, 'label' => 'Турбини'] );
+    }
+
+    protected function create_post_type(){
+        add_action( 'init', array( $this, 'custom_post_type' ) );
     }
 
     function enqueue() {
@@ -51,10 +61,20 @@ class TurbinePlugin
 
 }
 
+class SecondClass extends TurbinePlugin{
+    function register_post_type(){
+        $this->create_post_type();
+        $this->print_stuff();
+    }
+}
+
 if ( class_exists( 'TurbinePlugin' ) ) {
     $turbinePlugin = new TurbinePlugin();
     $turbinePlugin->register();
 }
+
+$secondClass = new SecondClass();
+$secondClass->register_post_type();
 
 // activation
 register_activation_hook( __FILE__, array( $turbinePlugin, 'activate') );
