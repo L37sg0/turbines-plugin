@@ -5,4 +5,4 @@
 ### * Public - function can be accessed from everywhere;
 ### * Protected - can be accessed only within the class itself or in class extending that class;
 ### * Private - can be accses only within the class itself
-### * Static
+### * Static - used in static call outsideof class without initializing an class instance
