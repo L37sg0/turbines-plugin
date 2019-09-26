@@ -16,7 +16,6 @@ defined( 'ABSPATH' ) or die( 'Permission Denied !' );
 
 class TurbinePlugin
 {
-
     function __construct(){
         add_action( 'init', array( $this, 'custom_post_type' ) );
     }
