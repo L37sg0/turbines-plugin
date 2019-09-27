@@ -3,10 +3,11 @@
 * @package Turbines
 */
 
-class TurbinePluginActivate
+namespace Inc;
+
+class Activate
 {
     public static function activate(){
-        //echo 'test';// generates error
         flush_rewrite_rules();
     }
 }

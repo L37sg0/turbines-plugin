@@ -1,0 +1,17 @@
+{
+    "name": "petar/turbines-plugin",
+    "description": "MRP plugin for WP",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Petar",
+            "email": "petar_1v@abv.bg"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
