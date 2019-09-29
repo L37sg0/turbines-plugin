@@ -3,7 +3,7 @@
 * @package Turbines
 */
 
-namespace Inc;
+namespace Inc\Base;
 
 class Deactivate
 {
