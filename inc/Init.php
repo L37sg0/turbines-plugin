@@ -16,8 +16,6 @@ final class Init{
             Pages\Admin::class,
             Base\Enqueue::class,
             Base\SettingsLinks::class,
-            //Base\Activate::class,
-            //Base\Deactivate::class,
         ];
     }
 

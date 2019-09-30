@@ -1,5 +1,12 @@
-<h1>Плъгин Турбини</h1>
-<p><?php $current_user = wp_get_current_user(); echo $current_user->user_login; ?></p><br/>
-<p><?php $current_user = wp_get_current_user(); echo $current_user->user_email; ?></p><br/>
-<p><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></p><br/>
-<p><?php $current_user = wp_get_current_user(); echo $current_user->ID; ?></p><br/>
+<div class="wrap">
+    <h1>Плъгин Турбини</h1>
+    <?php settings_errors(); ?>
+
+    <form method="post" action="options.php">
+        <?php  
+            settings_fields( 'turbines_options_group' );
+            do_settings_sections( 'turbines_plugin' );
+            submit_button();
+        ?>
+    </form>
+</div>
